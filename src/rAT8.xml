@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!--
+	<!DOCTYPE report SYSTEM "http://jfreereport.sourceforge.net/report.dtd">
+-->
+<report name="rAT8" width="0" height="0">
+
+    <reportheader height="110" fontname="Serif" fontstyle="bold" fontsize="15" >
+        <label name="Label 0" x="0" y="20" width="100%" height="5" alignment="center" fontstyle="bold" fontsize="9">Servicio P. Asesoramiento a Municipios (SEPAM)</label>
+        <imageref x="0" y="0" width="80" height="30" src="p200apa.jpg" name="dipcasApaisatRoig"/>
+        <line name="line0" x1="0" y1="35" x2="0" y2="35" weight="1"></line>
+        <label name="Label 1" x="0" y="40" width="100%" height="20" baseline="20" color="#C71444" alignment="center" >ASISTENCIA TÉCNICA</label>
+        <string-field name="peticionario" x="0" y="60" width="100%" height="10" alignment="center" fieldname="peticionario" color="#C71444"/>
+        <string-field name="ano" x="5" y="75" width="10" fontsize="13" height="4" color="#C71444" fieldname="ano"/>
+        <line name="line5" x1="0" y1="100" x2="0" y2="100" color="lightGray" weight="10"></line>
+    </reportheader>
+
+    <reportfooter height="50" fontname="Serif" fontstyle="bold" fontsize="8">
+        <line name="line4" x1="0" y1="25" x2="0" y2="25" weight="1"/>
+        <label name="Label 17" x="1" y="35" width="30" height="10" >Proyectado:</label>
+        <number-function name="total1" function="Sum1" format="#,##0" x="55" y="35" width="40" height="10" alignment="left"  ></number-function>
+        <label name="Label 18" x="115" y="35" width="30" height="10" >Certificado:</label>
+        <number-function name="total2" function="Sum2" format="#,##0" x="185" y="35" width="40" height="10" alignment="left" ></number-function>
+        <label name="Label 19" x="240" y="35" width="30" height="10" >Peritado:</label>
+        <number-function name="total3" function="Sum3" format="#,##0" x="300" y="35" width="40" height="10" alignment="left" ></number-function>
+        <label name="Label 20" x="375" y="35" width="30" height="10" >Planos:</label>
+        <number-function name="total4" function="Sum4" format="#,##0" x="420" y="35" width="40" height="10" alignment="left" ></number-function>
+
+
+    </reportfooter>
+
+    <pageheader height="80" onfirstpage="false" fontname="Serif" fontstyle="bold" fontsize="10">
+        <label name="Label 0" x="0" y="20" width="100%" height="5" alignment="center" fontstyle="bold" fontsize="9">Servicio P. Asesoramiento a Municipios (SEPAM)</label>
+        <imageref x="0" y="0" width="80" height="30" src="p200apa.jpg" name="dipcasApaisatRoig"/>
+        <line name="line0" x1="0" y1="35" x2="0" y2="35" weight="1"></line>
+        <label name="label50" x="100" y="45" width="100%" height="10" color="#C71444" >Asistencia Técnica - Listado Anual</label>
+        <string-field name="peticionario" x="0" y="55" width="100%" fontsize="12" color="#C71444" height="10" alignment="center" fieldname="peticionario" />
+        <line name="line1" x1="0" y1="75" x2="0" y2="75" color="lightGray" weight="2"></line>
+    </pageheader>
+
+    <pagefooter height="24" onfirstpage="true" onlastpage="true" fontname="Serif" fontstyle="italic" fontsize="9">
+        <line name="line2" x1="0" y1="4" x2="0" y2="4" weight="0.5"></line>
+        <date-function name="date1" function="Date" format="d-MMM-yyyy" x="0" y="4" width="100" height="18" alignment="left"></date-function>
+        <number-function name="pagenum1" function="PageNumber" format="Page 0" x="420" y="4" width="30" height="18" ></number-function>
+    </pagefooter>
+
+
+     <groups>
+            <group name="AT8">
+                    <groupheader height="25" fontname="Monospaced" fontstyle="bold" fontsize="8">
+                            <label name="Label 11" x="2" y="1" width="50" height="10" >Expdte:</label>
+                            <string-field name="expdte" x="45" y="1" width="100" alignment="left" height="10" fontstyle="bold" fieldname="expdte" />
+                            <label name="Label 7" x="10" y="12" width="170" height="10" >Nombre</label>
+                            <label name="Label 8" x="190" y="12" width="10" height="10" >Tipo</label>
+                            <label name="Label 10" x="250" y="12" width="15" height="10" >Proy.</label>
+                            <label name="Label 13" x="295" y="12" width="15" height="10" >Cert.</label>
+                            <label name="Label 14" x="345" y="12" width="15" height="10" >Peri.</label>
+                            <label name="Label 15" x="390" y="12" width="10" height="10" >Plan.</label>
+                            <label name="Label 16" x="425" y="12" width="10" height="10" >Situ.</label>
+                            <line name="line5" x1="0" y1="22" x2="0" y2="22" weight="1"/>
+                    </groupheader>
+
+                    <groupfooter height="20" fontname="Monospaced" fontstyle="bold" fontsize="9">
+
+                    </groupfooter>
+
+                     <fields>
+                        <field>expdte</field>
+                     </fields>
+
+            </group>
+    </groups>
+
+    <items height="10" fontname="Monospaced" fontstyle="plain" fontsize="6">
+      <string-field name="nombre" x="1" y="10" width="180" height="10" alignment="left" fieldname="nombre" />
+      <string-field name="tipo" x="200" y="10"  width="50" height="10" fieldname="tipo" />
+      <number-field name="proyectado" x="250" y="10" width="15" format="#,##0" alignment="right" height="10" fieldname="proyectado" />
+      <number-field name="certificado" x="295" y="10" width="15" format="#,##0" alignment="right" height="10" fieldname="certificado" />
+      <number-field name="peritado" x="340" y="10" width="15" format="#,##0" alignment="right" height="10" fieldname="peritado" />
+      <number-field name="planos" x="390" y="10" width="15" format="#,##0" alignment="right" height="10" fieldname="planos" />
+      <string-field name="situacion" x="430" y="10"  width="10" height="10" fieldname="situacion" />
+    </items>
+
+    <functions>
+        <function name="Date" class="com.jrefinery.report.function.ReportPropertyFunction">
+			<properties>
+				<property name="reportProperty">report.date</property>
+			</properties>
+        </function>
+        <function name="PageNumber" class="com.jrefinery.report.function.PageFunction"/>
+      <function name="Sum1" class="com.jrefinery.report.function.ItemSumFunction">
+         <properties>
+           <property name="field">proyectado</property>
+         </properties>
+      </function>
+      <function name="Sum2" class="com.jrefinery.report.function.ItemSumFunction">
+         <properties>
+           <property name="field">certificado</property>
+         </properties>
+      </function>
+      <function name="Sum3" class="com.jrefinery.report.function.ItemSumFunction">
+         <properties>
+           <property name="field">peritado</property>
+         </properties>
+      </function>
+      <function name="Sum4" class="com.jrefinery.report.function.ItemSumFunction">
+         <properties>
+           <property name="field">planos</property>
+         </properties>
+      </function>
+    </functions>
+</report>

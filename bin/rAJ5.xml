@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!--
+	<!DOCTYPE report SYSTEM "http://jfreereport.sourceforge.net/report.dtd">
+-->
+<report name="rAJ5" width="0" height="0">
+
+    <reportheader height="120" fontname="Serif" fontstyle="bold" fontsize="15" >
+        <label name="Label 0" x="0" y="20" width="100%" height="5" alignment="center" fontstyle="bold" fontsize="9">Servicio P. Asesoramiento a Municipios (SEPAM)</label>
+        <imageref x="0" y="0" width="80" height="30" src="p200apa.jpg" name="dipcasApaisatRoig"/>
+        <line name="line0" x1="0" y1="35" x2="0" y2="35" weight="1"></line>
+        <label name="Label 1" x="0" y="40" width="100%" height="20" baseline="20" color="#C71444" alignment="center" >ASISTENCIA JURÍDICA</label>
+        <label name="Label1" x="0" y="60" width="100%" height="20" baseline="20" color="#C71444" alignment="center" >RESUMEN ANUAL POR MATERIAS</label>
+        <string-field name="ano" x="5" y="85" width="10" fontsize="13" height="4" color="#C71444" fieldname="ano"/>
+        <line name="line5" x1="0" y1="110" x2="0" y2="110" color="lightGray" weight="10"></line>
+    </reportheader>
+
+    <reportfooter height="50" fontname="Serif" fontsize="10" fontstyle="bold">
+        <line name="line6" x1="0" y1="10" x2="0" y2="10" weight="1"/>
+        <label name="Label 14" x="330" y="40" width="30" fontsize="10" height="10" >TOTAL ASIST.:</label>
+        <number-function name="total1" function="Sum1" format="#,##0" x="35" y="20" width="76" height="20" alignment="right"></number-function>
+        <number-function name="total2" function="Sum2" format="#,##0" x="90" y="20" width="76" height="20" alignment="right"></number-function>
+        <number-function name="total3" function="Sum3" format="#,##0" x="150" y="20" width="76" height="20" alignment="right"></number-function>
+        <number-function name="total4" function="Sum4" format="#,##0" x="200" y="20" width="76" height="20" alignment="right"></number-function>
+        <number-function name="total5" function="Sum5" format="#,##0" x="255" y="20" width="76" height="20" alignment="right"></number-function>
+        <number-function name="total6" function="Sum6" format="#,##0" x="310" y="20" width="76" height="20" alignment="right"></number-function>
+        <number-function name="totalSuma" fontsize="10" function="SumTotal" format="#,##0" x="365" y="40" width="76" height="10" alignment="right"></number-function>
+    </reportfooter>
+
+    <pageheader height="50" onfirstpage="false" fontname="Serif" fontstyle="bold" fontsize="10">
+        <imageref x="0" y="0" width="80" height="30" src="p200apa.jpg" name="dipcasApaisatRoig"/>
+        <label name="label50" x="100" y="0" width="100%" height="20" color="#C71444" >Asistencia Jurídica - Listado Anual Ofisams</label>
+        <line name="line1" x1="0" y1="40" x2="0" y2="40" color="lightGray" weight="2"></line>
+    </pageheader>
+
+     <pagefooter height="24" onfirstpage="true" onlastpage="true" fontname="Serif" fontstyle="italic" fontsize="9">
+        <line name="line2" x1="0" y1="4" x2="0" y2="4" weight="0.5"></line>
+        <date-function name="date1" function="Date" format="d-MMM-yyyy" x="0" y="4" width="100" height="18" alignment="left"></date-function>
+        <number-function name="pagenum1" function="PageNumber" format="Page 0" x="420" y="4" width="30" height="18" ></number-function>
+    </pagefooter>
+
+    <groups>
+            <group name="AJ5">
+                    <groupheader height="25" fontname="Monospaced" fontstyle="bold" fontsize="8">
+                            <label name="Label 6" x="0" y="10" width="95" height="10" ></label>
+                            <label name="Label 7" x="85" y="10" width="75" height="10" >BENASAL</label>
+                            <label name="Label 8" x="135" y="10" width="75" height="10" >MONTANEJOS</label>
+                            <label name="Label 9" x="210" y="10" width="75" height="10" >MORELLA</label>
+                            <label name="Label 10" x="270" y="10" width="75" height="10" >ONDA</label>
+                            <label name="Label 11" x="305" y="10" width="75" height="10" >SEGORBE</label>
+                            <label name="Label 12" x="355" y="10" width="75" height="10" >TRAIGUERA</label>
+                            <label name="Label 13" x="420" y="10" width="75" height="10" >TOTAL</label>
+                            <line name="line5" x1="0" y1="25" x2="0" y2="25" weight="1"/>
+                    </groupheader>
+
+                    <groupfooter height="20" fontname="Monospaced" fontstyle="bold" fontsize="9">
+                    </groupfooter>
+              </group>
+
+    </groups>
+
+    <items height="20" fontname="Monospaced" fontstyle="plain" fontsize="7">
+      <string-field name="materia" x="5" y="10" width="100" alignment="left" height="20" fontstyle="bold" fieldname="materia" />
+      <number-field name="of_benassal" x="95" y="10"  width="15" format="#,##0" fontsize="8" alignment="right" height="20" fieldname="of_benassal" />
+      <number-field name="of_montanejos" x="150" y="10" width="15" format="#,##0" fontsize="8" alignment="right" height="20" fieldname="of_montanejos" />
+      <number-field name="of_morella" x="210" y="10" width="15" format="#,##0" fontsize="8" alignment="right" height="20" fieldname="of_morella" />
+      <number-field name="of_onda" x="265" y="10"  width="15" format="#,##0" fontsize="8" alignment="right" height="20" fieldname="of_onda" />
+      <number-field name="of_segorbe" x="320" y="10" width="15" format="#,##0" fontsize="8" alignment="right" height="20" fieldname="of_segorbe" />
+      <number-field name="of_traiguera" x="375" y="10" width="15" format="#,##0" fontsize="8" alignment="right" height="20" fieldname="of_traiguera" />
+      <number-field name="total" x="425" y="10" width="15" format="#,##0" alignment="right" height="20" fontstyle="bold" fontsize="8" fieldname="total" />
+
+    </items>
+
+
+
+    <functions>
+        <function name="Date" class="com.jrefinery.report.function.ReportPropertyFunction">
+			<properties>
+				<property name="reportProperty">report.date</property>
+			</properties>
+        </function>
+        <function name="PageNumber" class="com.jrefinery.report.function.PageFunction"/>
+      <function name="Sum1" class="com.jrefinery.report.function.ItemSumFunction">
+         <properties>
+           <property name="field">of_benassal</property>
+         </properties>
+      </function>
+      <function name="Sum2" class="com.jrefinery.report.function.ItemSumFunction">
+         <properties>
+           <property name="field">of_montanejos</property>
+         </properties>
+      </function>
+      <function name="Sum3" class="com.jrefinery.report.function.ItemSumFunction">
+         <properties>
+           <property name="field">of_morella</property>
+         </properties>
+      </function>
+      <function name="Sum4" class="com.jrefinery.report.function.ItemSumFunction">
+         <properties>
+           <property name="field">of_onda</property>
+         </properties>
+      </function>
+      <function name="Sum5" class="com.jrefinery.report.function.ItemSumFunction">
+         <properties>
+           <property name="field">of_segorbe</property>
+         </properties>
+      </function>
+      <function name="Sum6" class="com.jrefinery.report.function.ItemSumFunction">
+         <properties>
+           <property name="field">of_traiguera</property>
+         </properties>
+      </function>
+      <function name="SumTotal" class="com.jrefinery.report.function.ItemSumFunction">
+         <properties>
+           <property name="field">total</property>
+         </properties>
+      </function>
+
+
+    </functions>
+
+</report>

@@ -1,0 +1,2 @@
+jar cvf jPow075.jar *.class *.xml *.jpg ./imatges/*
+mv jPow075.jar ../libs

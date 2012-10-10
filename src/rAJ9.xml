@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!--
+	<!DOCTYPE report SYSTEM "http://jfreereport.sourceforge.net/report.dtd">
+-->
+<report name="rAJ9" width="0" height="0">
+
+    <reportheader height="110" fontname="Serif" fontstyle="bold" fontsize="15" >
+        <label name="Label 0" x="0" y="20" width="100%" height="5" alignment="center" fontstyle="bold" fontsize="9">Servicio P. Asesoramiento a Municipios (SEPAM)</label>
+        <imageref x="0" y="0" width="80" height="30" src="p200apa.jpg" name="dipcasApaisatRoig"/>
+        <line name="line0" x1="0" y1="35" x2="0" y2="35" weight="1"></line>
+        <label name="Label 1" x="0" y="40" width="100%" height="20" baseline="20" color="#C71444" alignment="center" >RESUMEN INTERANUAL</label>
+        <label name="Label 2" x="0" y="60" width="100%" height="10" baseline="20" color="#C71444" alignment="center" >ASISTENCIA JURIDICA - NUM. ASISTENCIAS / OFISAM</label>
+        <line name="line5" x1="0" y1="100" x2="0" y2="100" color="lightGray" weight="10"></line>
+    </reportheader>
+
+    <reportfooter height="20" fontname="Serif" fontstyle="bold" fontsize="10">
+        <label name="Label 1" x="100" y="10" width="50" height="10" >TOTAL INTERANUAL:</label>
+        <number-function name="SumTotal" function="SumTotal" format="#,##0" x="255" y="10" width="10" height="10" alignment="right"></number-function>
+    </reportfooter>
+
+    <pageheader height="80" onfirstpage="false" fontname="Serif" fontstyle="bold" fontsize="10">
+        <label name="Label 0" x="0" y="20" width="100%" height="5" alignment="center" fontstyle="bold" fontsize="9">Servicio P. Asesoramiento a Municipios (SEPAM)</label>
+        <imageref x="0" y="0" width="80" height="30" src="p200apa.jpg" name="dipcasApaisatRoig"/>
+        <line name="line0" x1="0" y1="35" x2="0" y2="35" weight="1"></line>
+        <label name="label50" x="100" y="45" width="100%" height="10" color="#C71444" >Asist. Jurídica - Num. Asistencias - Resumen Interanual</label>
+        <line name="line1" x1="0" y1="75" x2="0" y2="75" color="lightGray" weight="2"></line>        
+    </pageheader>
+
+    <pagefooter height="24" onfirstpage="true" onlastpage="true" fontname="Serif" fontstyle="italic" fontsize="9">
+        <line name="line2" x1="0" y1="10" x2="0" y2="10" weight="0.5"></line>
+        <date-function name="date1" function="Date" format="d-MMM-yyyy" x="0" y="10" width="100" height="10" alignment="left"></date-function>
+        <number-function name="pagenum1" function="PageNumber" format="Page 0" x="420" y="10" width="30" height="10" ></number-function>
+    </pagefooter>
+
+     <groups>
+            <group name="AJ9">
+                    <groupheader height="20" fontname="Monospaced" fontstyle="bold" fontsize="8">
+                            <string-field name="ofisam" x="2" y="0" width="100" alignment="left" fontsize="10" height="10" fieldname="ofisam" />
+                            <label name="Label 5" x="100" y="10" width="50" height="10" >AÑO</label>
+                            <label name="Label 6" x="240" y="10" width="50" height="10" >TOTAL</label>
+                            <line name="line5" x1="0" y1="20" x2="0" y2="20" weight="1"/>
+                    </groupheader>
+
+                    <groupfooter height="20" fontname="Monospaced" fontstyle="bold" fontsize="9">
+                        <number-function name="Sum1" function="Sum1" format="#,##0" x="255" y="10" width="10" height="10" alignment="right"></number-function>
+                    </groupfooter>
+
+                     <fields>
+                        <field>ofisam</field>
+                     </fields>
+
+            </group>
+    </groups>
+
+    <items height="10" fontname="Monospaced" fontstyle="plain" fontsize="8">
+        <rectangle name="background" x="0" y="5" width="100%" height="100%" color="#DFDFDF" weight="0"/>
+        <line name="top" x1="0" y1="5" x2="0" y2="5" color="#DFDFDF" weight="0.1"/>
+        <line name="bottom" x1="0" y1="15" x2="0" y2="15" color="#DFDFDF" weight="0.1"/>
+        <string-field name="ano" x="100" y="5"  width="50" height="10" fieldname="ano" />
+        <number-field name="total" x="250" y="5" width="15" format="#,##0" alignment="right" height="10" fieldname="total" />
+
+    </items>
+
+    <functions>
+        <function name="Sum1" class="com.jrefinery.report.function.ItemSumFunction">
+         <properties>
+           <property name="field">total</property>
+           <property name="group">AJ9</property>
+         </properties>
+        </function>
+
+        <function name="SumTotal" class="com.jrefinery.report.function.ItemSumFunction">
+         <properties>
+           <property name="field">total</property>
+         </properties>
+        </function>
+
+        <function name="Date" class="com.jrefinery.report.function.ReportPropertyFunction">
+			<properties>
+				<property name="reportProperty">report.date</property>
+			</properties>
+        </function>
+
+        <function name="PageNumber" class="com.jrefinery.report.function.PageFunction"/>
+
+        <function name="backgroundTrigger" class="com.jrefinery.report.function.ElementVisibilitySwitchFunction">
+            <properties>
+                <property name="element">background</property>
+            </properties>
+        </function>
+
+    </functions>
+
+</report>

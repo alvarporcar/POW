@@ -1,0 +1,2 @@
+Class-Path: gnujaxp.jar itext-0.93b.jar jcommon-0.6.4.jar jfreereport-0.7.5b.jar junit.jar mm.mysql-2.0.4-bin.jar
+Main-Class: InfOfisam075

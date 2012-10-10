@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!--
+	<!DOCTYPE report SYSTEM "http://jfreereport.sourceforge.net/report.dtd">
+-->
+<report name="rAT7" width="0" height="0">
+
+    <reportheader height="120" fontname="Serif" fontstyle="bold" fontsize="15" >
+        <label name="Label 0" x="0" y="20" width="100%" height="5" alignment="center" fontstyle="bold" fontsize="9">Servicio P. Asesoramiento a Municipios (SEPAM)</label>
+        <imageref x="0" y="0" width="80" height="30" src="p200apa.jpg" name="dipcasApaisatRoig"/>
+        <line name="line0" x1="0" y1="35" x2="0" y2="35" weight="1"></line>
+        <label name="Label 1" x="0" y="40" width="100%" height="20" baseline="20" color="#C71444" alignment="center" >ASISTENCIA TÉCNICA</label>
+        <label name="Label1" x="0" y="60" width="100%" height="20" baseline="20" color="#C71444" alignment="center" fontsize="12">RES. ANUAL PROYECTADO,CERTIFICADO,PERITADO,PLANOS</label>
+        <string-field name="ano" x="5" y="85" width="10" fontsize="13" height="4" color="#C71444" fieldname="ano"/>
+        <line name="line5" x1="0" y1="110" x2="0" y2="110" color="lightGray" weight="10"></line>
+    </reportheader>
+
+    <reportfooter height="30" fontname="Serif" fontstyle="bold" fontsize="9">
+        <line name="line6" x1="0" y1="1" x2="0" y2="1" weight="1"/>
+        <number-function name="total1" function="Sum1" format="#,##0" x="70" y="20" width="76" height="20" alignment="right"></number-function>
+        <number-function name="total2" function="Sum2" format="#,##0" x="170" y="20" width="76" height="20" alignment="right"></number-function>
+        <number-function name="total3" function="Sum3" format="#,##0" x="260" y="20" width="76" height="20" alignment="right"></number-function>
+        <number-function name="total4" function="Sum4" format="#,##0" fontsize="10" x="350" y="20" width="76" height="20" alignment="right"></number-function>
+    </reportfooter>
+
+    <pageheader height="50" onfirstpage="false" fontname="Serif" fontstyle="bold" fontsize="10">
+        <imageref x="0" y="0" width="80" height="30" src="p200apa.jpg" name="dipcasApaisatRoig"/>
+        <label name="label50" x="100" y="0" width="100%" height="20" color="#C71444" >Asistencia Técnica - Listado Anual Ofisams</label>
+        <line name="line1" x1="0" y1="40" x2="0" y2="40" color="lightGray" weight="2"></line>
+    </pageheader>
+
+
+     <pagefooter height="24" onfirstpage="true" onlastpage="true" fontname="Serif" fontstyle="italic" fontsize="9">
+        <line name="line2" x1="0" y1="4" x2="0" y2="4" weight="0.5"></line>
+        <date-function name="date1" function="Date" format="d-MMM-yyyy" x="0" y="4" width="100" height="18" alignment="left"></date-function>
+        <number-function name="pagenum1" function="PageNumber" format="Page 0" x="420" y="4" width="30" height="18" ></number-function>
+    </pagefooter>
+
+
+    <groups>
+            <group name="AT7">
+                    <groupheader height="20" fontname="Monospaced" fontstyle="bold" fontsize="8">
+                            <label name="Label 6" x="0" y="1" width="95" height="10" ></label>
+                            <label name="Label 7" x="100" y="1" width="75" height="10" >PROYECTADO</label>
+                            <label name="Label 8" x="200" y="1" width="75" height="10" >CERTIFICADO</label>
+                            <label name="Label 9" x="300" y="1" width="75" height="10" >PERITADO</label>
+                            <label name="Label 10" x="400" y="1" width="75" height="10" >PLANOS</label>
+                            <line name="line5" x1="0" y1="20" x2="0" y2="20" weight="1"/>
+                    </groupheader>
+
+                    <groupfooter height="20" fontname="Monospaced" fontstyle="bold" fontsize="9">
+                    </groupfooter>
+              </group>
+
+    </groups>
+
+    <items height="20" fontname="Monospaced" fontstyle="plain" fontsize="8">
+      <string-field name="oficina" x="5" y="10"  width="100" height="20"  fontsize="8" fontstyle="bold" fieldname="oficina" />
+      <number-field name="proyectado" x="110" y="10"  width="40" format="#,##0" alignment="right" height="10" fieldname="proyectado" />
+      <number-field name="certificado" x="210" y="10" width="40" format="#,##0" alignment="right" height="10" fieldname="certificado" />
+      <number-field name="peritado" x="300" y="10" width="40" format="#,##0" alignment="right" height="10" fieldname="peritado" />
+      <number-field name="total" x="390" y="10"  width="40" format="#,##0" alignment="right" height="10" fieldname="planos" />
+    </items>
+
+
+
+    <functions>
+        <function name="Date" class="com.jrefinery.report.function.ReportPropertyFunction">
+			<properties>
+				<property name="reportProperty">report.date</property>
+			</properties>
+        </function>
+        <function name="PageNumber" class="com.jrefinery.report.function.PageFunction"/>
+
+      <function name="Sum1" class="com.jrefinery.report.function.ItemSumFunction">
+         <properties>
+           <property name="field">proyectado</property>
+         </properties>
+      </function>
+      <function name="Sum2" class="com.jrefinery.report.function.ItemSumFunction">
+         <properties>
+           <property name="field">certificado</property>
+         </properties>
+      </function>
+      <function name="Sum3" class="com.jrefinery.report.function.ItemSumFunction">
+         <properties>
+           <property name="field">peritado</property>
+         </properties>
+      </function>
+      <function name="Sum4" class="com.jrefinery.report.function.ItemSumFunction">
+         <properties>
+           <property name="field">planos</property>
+         </properties>
+      </function>
+    </functions>
+
+</report>

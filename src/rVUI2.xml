@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!--
+	<!DOCTYPE report SYSTEM "http://jfreereport.sourceforge.net/report.dtd">
+-->
+<report name="rVUI2" width="0" height="0">
+
+    <reportheader height="110" fontname="Serif" fontstyle="bold" fontsize="15" >
+        <label name="Label 0" x="0" y="20" width="100%" height="5" alignment="center" fontstyle="bold" fontsize="9">Servicio P. Asesoramiento a Municipios (SEPAM)</label>
+        <imageref x="0" y="0" width="80" height="30" src="p200apa.jpg" name="dipcasApaisatRoig"/>
+        <line name="line0" x1="0" y1="35" x2="0" y2="35" weight="1"></line>
+        <label name="Label 1" x="0" y="40" width="100%" height="20" baseline="20" color="#C71444" alignment="center" >VENTANILLA ÚNICA - INFORMACIÓN</label>
+        <label name="Label1" x="0" y="60" width="100%" height="20" baseline="20" color="#C71444" alignment="center" >RESUMEN MENSUAL</label>
+        <string-field name="ano" x="5" y="75" width="10" fontsize="13" height="4" color="#C71444" fieldname="ano"/>
+        <string-field name="mes" x="50" y="75" width="10" fontsize="13" height="4" color="#C71444" fieldname="mes"/>
+        <line name="line5" x1="0" y1="100" x2="0" y2="100" color="lightGray" weight="10"></line>
+    </reportheader>
+
+    <reportfooter height="20" fontname="Serif" fontstyle="bold" fontsize="8">
+        <line name="line6" x1="0" y1="1" x2="0" y2="1" weight="1"/>
+        <number-function name="total1" function="Sum1" format="#,##0" x="30" y="10" width="76" height="10" alignment="right"></number-function>
+        <number-function name="total2" function="Sum2" format="#,##0" x="85" y="10" width="76" height="10" alignment="right"></number-function>
+        <number-function name="total3" function="Sum3" format="#,##0" x="150" y="10" width="76" height="10" alignment="right"></number-function>
+        <number-function name="total4" function="Sum4" format="#,##0" x="200" y="10" width="76" height="10" alignment="right"></number-function>
+        <number-function name="total5" function="Sum5" format="#,##0" x="240" y="10" width="76" height="10" alignment="right"></number-function>
+        <number-function name="total6" function="Sum6" format="#,##0" x="290" y="10" width="76" height="10" alignment="right"></number-function>
+        <number-function name="total7" function="Sum7" format="#,##0" x="365" y="10" width="76" fontsize="12" height="10" alignment="right"></number-function>
+
+    <!--
+        <label name="Label 2" x="0" y="0" width="468" height="24" alignment="center">*** </label>
+    -->
+    </reportfooter>
+
+    <pageheader height="50" onfirstpage="false" fontname="Serif" fontstyle="bold" fontsize="10">
+        <imageref x="0" y="0" width="80" height="30" src="p200apa.jpg" name="dipcasApaisatRoig"/>
+        <label name="label50" x="100" y="0" width="100%" height="20" color="#C71444" >Ventanilla Unica Información - Listado Mensual Ofisams</label>
+        <line name="line1" x1="0" y1="40" x2="0" y2="40" color="lightGray" weight="2"></line>
+    </pageheader>
+
+    <pagefooter height="24" onfirstpage="true" onlastpage="true" fontname="Serif" fontstyle="italic" fontsize="9">
+        <line name="line2" x1="0" y1="4" x2="0" y2="4" weight="0.5"></line>
+        <date-function name="date1" function="Date" format="d-MMM-yyyy" x="0" y="4" width="100" height="18" alignment="left"></date-function>
+        <number-function name="pagenum1" function="PageNumber" format="Page 0" x="420" y="4" width="30" height="18" ></number-function>
+    </pagefooter>
+
+    <groups>
+            <group name="VUI2">
+                    <groupheader height="35" fontname="Monospaced" fontstyle="bold" fontsize="9">
+                            <label name="Label 4" x="100" y="1" width="95" height="10" >PUBLICOS:</label>
+                            <number-field name="publicos" x="170" y="1" width="5" format="#,##0" alignment="right" height="10" fieldname="publicos" />
+                            <label name="Label 5" x="220" y="1" width="95" height="10" >PRIVADOS:</label>
+                            <number-field name="privados" x="310" y="1" width="5" format="#,##0" alignment="right" height="10" fieldname="privados" />
+                            <line name="line4" x1="2" y1="15" x2="2" y2="15" weight="1"/>
+                            <line name="vert 0" x1="1" y1="15" x2="1" y2="115" weight="1" />
+                            <label name="Label 6" x="0" y="20" width="95" height="10" ></label>
+                            <label name="Label 7" x="80" y="20" width="75" height="10" >BENASAL</label>
+                            <label name="Label 8" x="130" y="20" width="75" height="10" >MONTANEJOS</label>
+                            <label name="Label 9" x="200" y="20" width="75" height="10" >MORELLA</label>
+                            <label name="Label 10" x="250" y="20" width="75" height="10" >ONDA</label>
+                            <label name="Label 11" x="285" y="20" width="75" height="10" >SEGORBE</label>
+                            <label name="Label 12" x="340" y="20" width="75" height="10" >TRAIGUERA</label>
+                            <line name="vert 1" x1="405" y1="15" x2="405" y2="115" weight="1" />
+                            <label name="Label 13" x="420" y="20" width="50" height="10" >TOTAL</label>
+                            <line name="vert 2" x1="453" y1="15" x2="453" y2="115" weight="1" />
+                            <line name="line5" x1="0" y1="35" x2="0" y2="35" weight="1"/>
+                    </groupheader>
+
+                    <groupfooter height="20" fontname="Monospaced" fontstyle="bold" fontsize="9">
+                    </groupfooter>
+              </group>
+
+    </groups>
+
+    <items height="20" fontname="Monospaced" fontstyle="plain" fontsize="8">
+      <string-field name="depto" x="5" y="10" width="100" alignment="left" height="20" fieldname="depto" />
+      <number-field name="of_benassal" x="100" y="10"  width="10" format="#,##0" alignment="right" height="20" fieldname="of_benassal" />
+      <number-field name="of_montanejos" x="155" y="10" width="10" format="#,##0" alignment="right" height="20" fieldname="of_montanejos" />
+      <number-field name="of_morella" x="220" y="10" width="10" format="#,##0" alignment="right" height="20" fieldname="of_morella" />
+      <number-field name="of_onda" x="265" y="10"  width="10" format="#,##0" alignment="right" height="20" fieldname="of_onda" />
+      <number-field name="of_segorbe" x="305" y="10" width="10" format="#,##0" alignment="right" height="20" fieldname="of_segorbe" />
+      <number-field name="of_traiguera" x="360" y="10" width="10" format="#,##0" alignment="right" height="20" fieldname="of_traiguera" />
+      <number-field name="total" x="430" y="10" width="10" fontstyle="bold" format="#,##0" alignment="right" height="20" fieldname="total" />
+
+    </items>
+
+
+
+    <functions>
+        <function name="Date" class="com.jrefinery.report.function.ReportPropertyFunction">
+			<properties>
+				<property name="reportProperty">report.date</property>
+			</properties>
+        </function>
+        <function name="PageNumber" class="com.jrefinery.report.function.PageFunction"/>
+      <function name="Sum1" class="com.jrefinery.report.function.ItemSumFunction">
+         <properties>
+           <property name="field">of_benassal</property>
+            <!--<property name="group">VUI1</property>-->
+         </properties>
+      </function>
+      <function name="Sum2" class="com.jrefinery.report.function.ItemSumFunction">
+         <properties>
+           <property name="field">of_montanejos</property>
+            <!--<property name="group">VUI1</property>-->
+         </properties>
+      </function>
+      <function name="Sum3" class="com.jrefinery.report.function.ItemSumFunction">
+         <properties>
+           <property name="field">of_morella</property>
+            <!--<property name="group">VUI1</property>-->
+         </properties>
+      </function>
+      <function name="Sum4" class="com.jrefinery.report.function.ItemSumFunction">
+         <properties>
+           <property name="field">of_onda</property>
+            <!--<property name="group">VUI1</property>-->
+         </properties>
+      </function>
+      <function name="Sum5" class="com.jrefinery.report.function.ItemSumFunction">
+         <properties>
+           <property name="field">of_segorbe</property>
+            <!--<property name="group">VUI1</property>-->
+         </properties>
+      </function>
+      <function name="Sum6" class="com.jrefinery.report.function.ItemSumFunction">
+         <properties>
+           <property name="field">of_traiguera</property>
+            <!--<property name="group">VUI1</property>-->
+         </properties>
+      </function>
+      <function name="Sum7" class="com.jrefinery.report.function.ItemSumFunction">
+         <properties>
+           <property name="field">total</property>
+            <!--<property name="group">VUI1</property>-->
+         </properties>
+      </function>
+    </functions>
+
+</report>

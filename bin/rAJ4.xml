@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!--
+	<!DOCTYPE report SYSTEM "http://jfreereport.sourceforge.net/report.dtd">
+-->
+<report name="rAJ4" width="0" height="0">
+
+    <reportheader height="110" fontname="Serif" fontstyle="bold" fontsize="15" >
+        <label name="Label 0" x="0" y="20" width="100%" height="5" alignment="center" fontstyle="bold" fontsize="9">Servicio P. Asesoramiento a Municipios (SEPAM)</label>
+        <imageref x="0" y="0" width="80" height="30" src="p200apa.jpg" name="dipcasApaisatRoig"/>
+        <line name="line0" x1="0" y1="35" x2="0" y2="35" weight="1"></line>
+        <label name="Label 1" x="0" y="40" width="100%" height="20" baseline="20" color="#C71444" alignment="center" >ASISTENCIA JURÍDICA</label>
+        <string-field name="descripcion" x="0" y="60" width="100%" height="10" alignment="center" fieldname="descripcion" color="#C71444"/>
+        <string-field name="ano" x="5" y="75" width="10" fontsize="13" height="4" color="#C71444" fieldname="ano"/>
+        <line name="line5" x1="0" y1="100" x2="0" y2="100" color="lightGray" weight="10"></line>
+    </reportheader>
+
+    <reportfooter height="10" fontname="Serif" fontstyle="bold" fontsize="10">
+        <label name="Label 10" x="375" y="20" width="50" fontstyle="bold" height="10" >TOTAL:</label>
+        <number-field name="suma" x="425" y="20" width="15" format="#,##0" alignment="right" height="10" fieldname="suma" />
+    </reportfooter>
+
+    <pageheader height="80" onfirstpage="false" fontname="Serif" fontstyle="bold" fontsize="10">
+        <label name="Label 0" x="0" y="20" width="100%" height="5" alignment="center" fontstyle="bold" fontsize="9">Servicio P. Asesoramiento a Municipios (SEPAM)</label>
+        <imageref x="0" y="0" width="80" height="30" src="p200apa.jpg" name="dipcasApaisatRoig"/>
+        <line name="line0" x1="0" y1="35" x2="0" y2="35" weight="1"></line>
+        <label name="label50" x="100" y="45" width="100%" height="10" color="#C71444" >Asistencia Jurídica - Listado Anual Ofisam</label>
+        <string-field name="descripcion" x="0" y="55" width="100%" fontsize="12" color="#C71444" height="10" alignment="center" fieldname="descripcion" />
+        <line name="line1" x1="0" y1="75" x2="0" y2="75" color="lightGray" weight="2"></line>
+    </pageheader>
+
+    <pagefooter height="24" onfirstpage="true" onlastpage="true" fontname="Serif" fontstyle="italic" fontsize="9">
+        <line name="line2" x1="0" y1="4" x2="0" y2="4" weight="0.5"></line>
+        <date-function name="date1" function="Date" format="d-MMM-yyyy" x="0" y="4" width="100" height="18" alignment="left"></date-function>
+        <number-function name="pagenum1" function="PageNumber" format="Page 0" x="420" y="4" width="30" height="18" ></number-function>
+    </pagefooter>
+
+     <groups>
+            <group name="AJ4">
+                    <groupheader height="20" fontname="Monospaced" fontstyle="bold" fontsize="8">
+                            <string-field name="materia" x="2" y="1" width="100" alignment="left" height="10" fieldname="materia" />
+                            <label name="Label 6" x="30" y="10" width="50" height="10" >PETICIONARIO</label>
+                            <label name="Label 9" x="425" y="10" width="50" height="10" >NUM.</label>
+                            <line name="line5" x1="0" y1="20" x2="0" y2="20" weight="1"/>
+                    </groupheader>
+
+                    <groupfooter height="20" fontname="Monospaced" fontstyle="bold" fontsize="9">
+
+                    </groupfooter>
+
+                     <fields>
+                        <field>materia</field>
+                     </fields>
+
+            </group>
+    </groups>
+
+    <items height="10" fontname="Monospaced" fontstyle="plain" fontsize="8">
+      <string-field name="peticionario" x="30" y="0"  width="50" height="10" fieldname="peticionario" />
+      <number-field name="num" x="425" y="0" width="15" format="#,##0" alignment="right" height="10" fieldname="num" />
+    </items>
+
+    <functions>
+       <function name="Date" class="com.jrefinery.report.function.ReportPropertyFunction">
+			<properties>
+				<property name="reportProperty">report.date</property>
+			</properties>
+        </function>
+        <function name="PageNumber" class="com.jrefinery.report.function.PageFunction"/>
+    </functions>
+
+</report>

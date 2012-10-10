@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!--
+	<!DOCTYPE report SYSTEM "http://jfreereport.sourceforge.net/report.dtd">
+-->
+<report name="rVU4" width="0" height="0">
+
+    <reportheader height="110" fontname="Serif" fontstyle="bold" fontsize="15" >
+        <label name="Label 0" x="0" y="20" width="100%" height="5" alignment="center" fontstyle="bold" fontsize="9">Servicio P. Asesoramiento a Municipios (SEPAM)</label>
+        <imageref x="0" y="0" width="80" height="30" src="p200apa.jpg" name="dipcasApaisatRoig"/>
+        <line name="line0" x1="0" y1="35" x2="0" y2="35" weight="1"></line>
+        <label name="Label 1" x="0" y="40" width="100%" height="20" baseline="20" color="#C71444" alignment="center" >VENTANILLA ÚNICA - REGISTRO</label>
+        <label name="Label1" x="0" y="60" width="100%" height="20" baseline="20" color="#C71444" alignment="center" >RESUMEN ANUAL</label>
+        <string-field name="ano" x="5" y="75" width="10" fontsize="13" height="4" color="#C71444" fieldname="ano"/>
+        <line name="line5" x1="0" y1="100" x2="0" y2="100" color="lightGray" weight="10"></line>
+    </reportheader>
+
+    <reportfooter height="50" fontname="Serif" fontstyle="bold" fontsize="8">
+      <number-function name="total2" function="Sum2" format="#,##0" x="110" y="20" width="25" height="10" alignment="right"></number-function>
+      <number-function name="total3" function="Sum3" format="#,##0" x="175" y="20" width="25" height="10" alignment="right"></number-function>
+      <number-function name="total4" function="Sum4" format="#,##0" x="235" y="20" width="25" height="10" alignment="right"></number-function>
+      <number-function name="total5" function="Sum5" format="#,##0" x="280" y="20" width="25" height="10" alignment="right"></number-function>
+      <number-function name="total6" function="Sum6" format="#,##0" x="335" y="20" width="25" height="10" alignment="right"></number-function>
+      <number-function name="total1" function="Sum1" fontsize="12" format="#,##0" x="415" y="20" width="25" height="12" alignment="right"></number-function>
+    </reportfooter>
+
+    <pageheader height="50" onfirstpage="false" fontname="Serif" fontstyle="bold" fontsize="10">
+        <imageref x="0" y="0" width="90" height="40" src="p200apa.jpg" name="dipcasApaisatRoig"/>
+        <label name="label50" x="100" y="0" width="100%" height="20" alignment="center">Ventanilla Unica Registro - Listado Mensual</label>
+        <line name="line1" x1="0" y1="40" x2="0" y2="30" weight="0.5"></line>
+
+    </pageheader>
+
+    <pagefooter height="24" onfirstpage="true" onlastpage="true" fontname="Serif" fontstyle="italic" fontsize="9">
+        <line name="line2" x1="0" y1="4" x2="0" y2="4" weight="1"></line>
+        <date-function name="date1" function="Date" format="d-MMM-yyyy" x="0" y="4" width="100" height="18" alignment="left"></date-function>
+        <number-function name="pagenum1" function="PageNumber" format="Page 0" x="420" y="4" width="30" height="18" ></number-function>
+    </pagefooter>
+
+
+    <groups>
+            <group name="VU4">
+
+                    <groupheader height="50" fontname="Monospaced" fontstyle="bold" fontsize="9">
+                            <line name="line4" x1="3" y1="1" x2="3" y2="1" weight="1"/>
+                            <line name="vert 0" x1="1" y1="1" x2="1" y2="210" weight="1" />
+                            <label name="Label U" x="115" y="10" width="50" height="10" >USUARIOS</label>
+                            <label name="Label D" x="250" y="10" width="50" height="10" >DESTINATARIOS</label>
+                            <label name="Label 4" x="5" y="30" width="100" height="10" >OFICINA</label>
+                            <label name="Label 5" x="85" y="30" width="50" height="10" >PUBLICOS</label>
+                            <label name="Label 6" x="155" y="30" width="50" height="10" >PRIVADOS</label>
+                            <line name="vert 1" x1="210" y1="1" x2="210" y2="210" weight="1" />
+                            <label name="Label 7" x="215" y="30" width="50" height="10" >ESTADO</label>
+                            <label name="Label 8" x="265" y="30" width="50" height="10" >GVA</label>
+                            <label name="Label 9" x="300" y="30" width="75" height="10" >DIPUTACION</label>
+                            <line name="vert 2" x1="370" y1="1" x2="370" y2="210" weight="1" />
+                            <label name="Label 10" x="385" y="30" width="50" height="10" >TOTAL REGS.</label>
+                            <line name="vert 3" x1="453" y1="1" x2="453" y2="210" weight="1" />
+                            <line name="line5" x1="3" y1="50" x2="3" y2="50" weight="1"/>
+                    </groupheader>
+
+                    <groupfooter height="20" fontname="Monospaced" fontstyle="bold" fontsize="9">
+                            <line name="line6" x1="3" y1="40" x2="3" y2="40" weight="1"></line>
+                    </groupfooter>
+              </group>
+
+    </groups>
+
+    <items height="20" fontname="Monospaced" fontstyle="plain" fontsize="8">
+      <string-field name="descripcion" x="5" y="20" width="105" fontstyle="bold" alignment="left" height="20" fieldname="descripcion" />
+      <number-field name="pubs" x="110" y="20"  width="25" format="#,##0" alignment="right" height="20" fieldname="pubs" />
+      <number-field name="privs" x="175" y="20" width="25" format="#,##0" alignment="right" height="20" fieldname="privs" />
+      <number-field name="admonestado" x="235" y="20" width="25" format="#,##0" alignment="right" height="20" fieldname="admonestado" />
+      <number-field name="gva" x="280" y="20"  width="25" format="#,##0" alignment="right" height="20" fieldname="gva" />
+      <number-field name="diputacion" x="335" y="20" width="25" format="#,##0" alignment="right" height="20" fieldname="diputacion" />
+      <number-field name="totalRegistres" x="415" y="20" width="25" format="#,##0" fontstyle="bold" alignment="right" height="20" fieldname="totalRegistres" />
+    </items>
+
+
+
+    <functions>
+        <function name="Date" class="com.jrefinery.report.function.ReportPropertyFunction">
+			<properties>
+				<property name="reportProperty">report.date</property>
+			</properties>
+        </function>
+        <function name="PageNumber" class="com.jrefinery.report.function.PageFunction"/>
+        <function name="Sum1" class="com.jrefinery.report.function.ItemSumFunction">
+          <properties>
+            <property name="field">totalRegistres</property>
+            <property name="group">VU4</property>
+          </properties>
+	</function>
+        <function name="Sum2" class="com.jrefinery.report.function.ItemSumFunction">
+          <properties>
+            <property name="field">pubs</property>
+            <property name="group">VU4</property>
+          </properties>
+	</function>
+        <function name="Sum3" class="com.jrefinery.report.function.ItemSumFunction">
+          <properties>
+            <property name="field">privs</property>
+            <property name="group">VU4</property>
+          </properties>
+	</function>
+        <function name="Sum4" class="com.jrefinery.report.function.ItemSumFunction">
+          <properties>
+            <property name="field">admonestado</property>
+            <property name="group">VU4</property>
+          </properties>
+	</function>
+        <function name="Sum5" class="com.jrefinery.report.function.ItemSumFunction">
+          <properties>
+            <property name="field">gva</property>
+            <property name="group">VU4</property>
+          </properties>
+	</function>
+        <function name="Sum6" class="com.jrefinery.report.function.ItemSumFunction">
+          <properties>
+            <property name="field">diputacion</property>
+            <property name="group">VU4</property>
+          </properties>
+	</function>
+    </functions>
+</report>

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!--
+	<!DOCTYPE report SYSTEM "http://jfreereport.sourceforge.net/report.dtd">
+-->
+<report name="rVU1" width="0" height="0">
+
+    <reportheader height="110" fontname="Serif" fontstyle="bold" fontsize="15" >
+        <label name="Label 0" x="0" y="20" width="100%" height="5" alignment="center" fontstyle="bold" fontsize="9">Servicio P. Asesoramiento a Municipios (SEPAM)</label>
+        <imageref x="0" y="0" width="80" height="30" src="p200apa.jpg" name="dipcasApaisatRoig"/>
+        <line name="line0" x1="0" y1="35" x2="0" y2="35" weight="1"></line>
+        <label name="Label 1" x="0" y="40" width="100%" height="20" baseline="20" color="#C71444" alignment="center" >VENTANILLA ÚNICA - REGISTRO</label>
+        <string-field name="descripcion" x="0" y="60" width="100%" height="10" alignment="center" fieldname="descripcion" color="#C71444"/>
+        <string-field name="ano" x="5" y="75" width="10" fontsize="13" height="4" color="#C71444" fieldname="ano"/>
+        <string-field name="mes" x="50" y="75" width="10" fontsize="13" height="4" color="#C71444" fieldname="mes"/>
+        <line name="line5" x1="0" y1="100" x2="0" y2="100" color="lightGray" weight="10"></line>
+    </reportheader>
+
+
+    <reportfooter height="48" fontname="Serif" fontstyle="bold" fontsize="16">
+    <!--
+        <label name="Label 2" x="0" y="0" width="468" height="24" alignment="center">*** </label>
+    -->
+    </reportfooter>
+
+    <pageheader height="50" onfirstpage="false" fontname="Serif" fontstyle="bold" fontsize="10">
+        <imageref x="0" y="0" width="90" height="40" src="p200apa.jpg" name="dipcasApaisatRoig"/>
+        <label name="label50" x="100" y="0" width="100%" height="20" alignment="center">Ventanilla Unica Registro - Listado Mensual Ofisam</label>
+        <line name="line1" x1="0" y1="40" x2="0" y2="30" weight="0.5"></line>
+
+    </pageheader>
+
+    <pagefooter height="24" onfirstpage="true" onlastpage="true" fontname="Serif" fontstyle="italic" fontsize="9">
+        <line name="line2" x1="0" y1="4" x2="0" y2="4" weight="0.5"></line>
+        <date-function name="date1" function="Date" format="d-MMM-yyyy" x="0" y="4" width="100" height="18" alignment="left"></date-function>
+        <number-function name="pagenum1" function="PageNumber" format="Page 0" x="420" y="4" width="30" height="18" ></number-function>
+    </pagefooter>
+
+
+    <groups>
+            <group name="VU1">
+                    <groupheader height="80" fontname="Monospaced" fontsize="9">
+                            <rectangle x="0" y="0" width="100%" height="100%" color="#E9E7E7" weight="5"/>
+
+                            <label name="Label 44" x="150" y="1" width="100" fontstyle="bold" height="10" >TOTAL REGISTROS:</label>
+                            <string-field name="totalRegistres" x="270" y="1" width="10" fontstyle="bold" height="10" fieldname="totalRegistres" />
+                            <line name="line4" x1="0" y1="15" x2="0" y2="15" weight="0.5"/>
+                            <label name="Label 50" x="1" y="20" width="100" fontstyle="bold" height="10" >USUARIOS:</label>
+                            <label name="Label 4" x="125" y="30" width="50" fontstyle="bold" height="10" >Públicos:</label>
+                            <string-field name="pubs" x="195" y="30" width="10" alignment="right" height="8" fieldname="pubs" />
+                            <label name="Label 5" x="225" y="30" width="50" fontstyle="bold" height="10" >Privados:</label>
+                             <string-field name="privs" x="300" y="30" alignment="right" width="10" height="8" fieldname="privs" />
+                             <label name="Label 51" x="1" y="50" width="100" fontstyle="bold" height="10" >DESTINATARIOS:</label>
+                            <label name="Label 6" x="60" y="60" width="50" fontstyle="bold" height="10" >Admón Estado:</label>
+                            <string-field name="admonestado" x="160" y="60" width="10" alignment="right" height="8" fieldname="admonestado" />
+                            <label name="Label 7" x="200" y="60" width="50" fontstyle="bold" height="10" >GVA:</label>
+                            <string-field name="gva" x="240" y="60" width="10" alignment="right" height="8" fieldname="gva" />
+                            <label name="Label 7" x="300" y="60" width="50" fontstyle="bold" height="10" >Diputación:</label>
+                            <string-field name="gva" x="375" y="60" width="10" alignment="right" height="8" fieldname="dipcas" />
+                            <line name="line5" x1="0" y1="80" x2="0" y2="80" weight="0.5"/>
+                    </groupheader>
+
+                    <groupfooter height="18" fontname="Monospaced" fontstyle="bold" fontsize="9"/>
+
+            </group>
+    </groups>
+
+    <items height="10" fontname="Monospaced" fontstyle="plain" fontsize="8">
+      <label name="Label 45" x="5" y="20" width="200" align="left" fontstyle="bold" height="10" >VU-DIPUTACIÓN:DEPENDENCIAS:</label>
+
+      <label name="Label 8" x="30" y="40" width="100" align="left" fontstyle="bold" height="10" >Archivo:</label>
+      <string-field name="archivo" x="130" y="40" width="10" alignment="right" height="10" fieldname="archivo" />
+      <label name="Label 9" x="175" y="40" width="100" align="left" fontstyle="bold" height="10" >Arqueología:</label>
+      <string-field name="arqueologia" x="275" y="40"  width="10" alignment="right" height="10" fieldname="arqueologia" />
+      <label name="Label 10" x="300" y="40" width="100" align="left" fontstyle="bold" height="10" >BOP:</label>
+      <string-field name="bop" x="400" y="40" width="10" alignment="right" height="10" fieldname="bop" />
+
+      <label name="Label 11" x="30" y="55" width="100" align="left" fontstyle="bold" height="10" >Carreteras:</label>
+      <string-field name="carreteras" x="130" y="55" width="10" alignment="right" height="10" fieldname="carreteras" />
+      <label name="Label 12" x="175" y="55" width="100" align="left" fontstyle="bold" height="10" >Castillo:</label>
+      <string-field name="castillo" x="275" y="55"  width="10" alignment="right" height="10" fieldname="castillo" />
+      <label name="Label 13" x="300" y="55" width="100" align="left" fontstyle="bold" height="10" >Contratación:</label>
+      <string-field name="contratacion" x="400" y="55" width="10" alignment="right" height="10" fieldname="contratacion" />
+
+
+      <label name="Label 14" x="30" y="70" width="100" align="left" fontstyle="bold" height="10" >Cultura:</label>
+      <string-field name="cultura" x="130" y="70" width="10" alignment="right" height="10" fieldname="cultura" />
+      <label name="Label 15" x="175" y="70" width="100" align="left" fontstyle="bold" height="10" >Granja:</label>
+      <string-field name="granja" x="275" y="70"  width="10" alignment="right" height="10" fieldname="granja" />
+      <label name="Label 16" x="300" y="70" width="100" align="left" fontstyle="bold" height="10" >Imprenta:</label>
+      <string-field name="imprenta" x="400" y="70" width="10" alignment="right" height="10" fieldname="imprenta" />
+
+      <label name="Label 17" x="30" y="85" width="100" align="left" fontstyle="bold" height="10" >Informática:</label>
+      <string-field name="informatica" x="130" y="85" width="10" alignment="right" height="10" fieldname="informatica" />
+      <label name="Label 18" x="175" y="85" width="100" align="left" fontstyle="bold" height="10" >Intervención:</label>
+      <string-field name="intervencion" x="275" y="85"  width="10" alignment="right" height="10" fieldname="intervencion" />
+      <label name="Label 19" x="300" y="85" width="100" align="left" fontstyle="bold" height="10" >Medio Ambiente:</label>
+      <string-field name="medioamb" x="400" y="85" width="10" alignment="right" height="10" fieldname="medioamb" />
+
+      <label name="Label 20" x="30" y="100" width="100" align="left" fontstyle="bold" height="10" >Museo:</label>
+      <string-field name="museo" x="130" y="100" width="10" alignment="right" height="10" fieldname="museo" />
+      <label name="Label 21" x="175" y="100" width="100" align="left" fontstyle="bold" height="10" >Organización:</label>
+      <string-field name="org" x="275" y="100"  width="10" alignment="right" height="10" fieldname="org" />
+      <label name="Label 22" x="300" y="100" width="100" align="left" fontstyle="bold" height="10" >OTAM:</label>
+      <string-field name="otam" x="400" y="100" width="10" alignment="right" height="10" fieldname="otam" />
+
+      <label name="Label 23" x="30" y="115" width="100" align="left" fontstyle="bold" height="10" >Parque:</label>
+      <string-field name="parque" x="130" y="115" width="10" alignment="right" height="10" fieldname="parque" />
+      <label name="Label 24" x="175" y="115" width="100" align="left" fontstyle="bold" height="10" >Penyeta:</label>
+      <string-field name="penyeta" x="275" y="115"  width="10" alignment="right" height="10" fieldname="penyeta" />
+      <label name="Label 25" x="300" y="115" width="100" align="left" fontstyle="bold" height="10" >Personal:</label>
+      <string-field name="personal" x="400" y="115" width="10" alignment="right" height="10" fieldname="personal" />
+
+      <label name="Label 26" x="30" y="130" width="100" align="left" fontstyle="bold" height="10" >Planificación:</label>
+      <string-field name="planificacion" x="130" y="130" width="10" alignment="right" height="10" fieldname="planificacion" />
+      <label name="Label 27" x="175" y="130" width="100" align="left" fontstyle="bold" height="10" >Piscina:</label>
+      <string-field name="piscina" x="275" y="130"  width="10" alignment="right" height="10" fieldname="piscina" />
+      <label name="Label 28" x="300" y="130" width="100" align="left" fontstyle="bold" height="10" >Presidencia:</label>
+      <string-field name="presidencia" x="400" y="130" width="10" alignment="right" height="10" fieldname="presidencia" />
+
+      <label name="Label 29" x="30" y="145" width="100" align="left" fontstyle="bold" height="10" >Publicaciones:</label>
+      <string-field name="publicaciones" x="130" y="145" width="10" alignment="right" height="10" fieldname="publicaciones" />
+      <label name="Label 30" x="175" y="145" width="100" align="left" fontstyle="bold" height="10" >Recaudación:</label>
+      <string-field name="recaudacion" x="275" y="145"  width="10" alignment="right" height="10" fieldname="recaudacion" />
+      <label name="Label 31" x="300" y="145" width="100" align="left" fontstyle="bold" height="10" >Reg. Interior:</label>
+      <string-field name="reginterior" x="400" y="145" width="10" alignment="right" height="10" fieldname="reginterior" />
+
+      <label name="Label 32" x="30" y="160" width="100" align="left" fontstyle="bold" height="10" >Reg. General:</label>
+      <string-field name="reggeneral" x="130" y="160" width="10" alignment="right" height="10" fieldname="reggeneral" />
+      <label name="Label 33" x="175" y="160" width="100" align="left" fontstyle="bold" height="10" >Restauración:</label>
+      <string-field name="restauracion" x="275" y="160"  width="10" alignment="right" height="10" fieldname="restauracion" />
+      <label name="Label 34" x="300" y="160" width="100" align="left" fontstyle="bold" height="10" >Secretaría:</label>
+      <string-field name="secretaria" x="400" y="160" width="10" alignment="right" height="10" fieldname="secretaria" />
+
+      <label name="Label 35" x="30" y="175" width="100" align="left" fontstyle="bold" height="10" >Sepam:</label>
+      <string-field name="sepam" x="130" y="175" width="10" alignment="right" height="10" fieldname="sepam" />
+      <label name="Label 36" x="175" y="175" width="100" align="left" fontstyle="bold" height="10" >Tesorería:</label>
+      <string-field name="tesoreria" x="275" y="175"  width="10" alignment="right" height="10" fieldname="tesoreria" />
+      <label name="Label 37" x="300" y="175" width="100" align="left" fontstyle="bold" height="10" >Cerámica:</label>
+      <string-field name="ceramica" x="400" y="175" width="10" alignment="right" height="10" fieldname="ceramica" />
+
+      <label name="Label 38" x="30" y="190" width="100" align="left" fontstyle="bold" height="10" >Escuela Taurina:</label>
+      <string-field name="escuelataurina" x="130" y="190" width="10" alignment="right" height="10" fieldname="escuelataurina" />
+      <label name="Label 39" x="175" y="190" width="100" align="left" fontstyle="bold" height="10" >Hospital:</label>
+      <string-field name="hospital" x="275" y="190"  width="10" alignment="right" height="10" fieldname="hospital" />
+      <label name="Label 40" x="300" y="190" width="100" align="left" fontstyle="bold" height="10" >Turismo:</label>
+      <string-field name="turismo" x="400" y="190" width="10" alignment="right" height="10" fieldname="turismo" />
+
+      <label name="Label 41" x="30" y="205" width="100" align="left" fontstyle="bold" height="10" >Bomberos:</label>
+      <string-field name="bomberos" x="130" y="205" width="10" alignment="right" height="10" fieldname="bomberos" />
+      <label name="Label 42" x="175" y="205" width="100" align="left" fontstyle="bold" height="10" >Matad. Plana:</label>
+      <string-field name="mataplana" x="275" y="205"  width="10" alignment="right" height="10" fieldname="mataplana" />
+      <label name="Label 43" x="300" y="205" width="100" align="left" fontstyle="bold" height="10" >Matad. Norte:</label>
+      <string-field name="matanorte" x="400" y="205" width="10" alignment="right" height="10" fieldname="matanorte" />
+
+    </items>
+
+
+
+    <functions>
+        <function name="Date" class="com.jrefinery.report.function.ReportPropertyFunction">
+			<properties>
+				<property name="reportProperty">report.date</property>
+			</properties>
+        </function>
+        <function name="PageNumber" class="com.jrefinery.report.function.PageFunction"/>
+    </functions>
+</report>
